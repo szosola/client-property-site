@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'; 
 import propertiesData from '../data/properties.json';
 
 function SearchPage () {
@@ -11,6 +12,10 @@ function SearchPage () {
           <p>{property.location}</p>
           <p>Bedrooms: {property.bedrooms}</p>
           <p>Price: ${property.price.toLocaleString()}</p>
+
+          <Link to={`/property/${property.id}`}>
+            View Property
+          </Link>
         </div>
       ))}
     </>
